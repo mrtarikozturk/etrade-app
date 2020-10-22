@@ -5,7 +5,12 @@ import { product_card } from '../style';
 
 const ProductCard = (props) => {
     return (
-        <View style={product_card.container}>
+        <View style={[product_card.container,
+        {
+            opacity: props.product.inStock ? 1 : 0.2,
+            backgroundColor: props.product.inStock ? null : 'black',
+        }
+        ]}>
             <Image
                 source={{ uri: props.product.imgURL }}
                 style={product_card.image}
